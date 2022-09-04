@@ -11,7 +11,7 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 
 import { UserController, PostController } from './controllers/index.js';
 
-mongoose.connect('mongodb://admin1:Admin345@ac-jbftqbj-shard-00-00.qwluiae.mongodb.net:27017,ac-jbftqbj-shard-00-01.qwluiae.mongodb.net:27017,ac-jbftqbj-shard-00-02.qwluiae.mongodb.net:27017/?ssl=true&replicaSet=atlas-j3nmtl-shard-0&authSource=admin&retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
  
